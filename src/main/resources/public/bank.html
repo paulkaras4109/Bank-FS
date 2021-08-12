@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Bank of Paul </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<link href="bank.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class = "centered container">
+        <div class = "jumbotron text-center">
+            <h3>Bank of Paul </h3>
+        </div>
+    </div>
+    <div class = "container">
+        <table class = "container jumbotron" id="accountsGoHere">
+            <tr>
+                <th> Account ID </th>
+                <th> Account Balance </th>
+            </tr>
+        </table>
+    </div>
+    <div class = "container">
+    	<button id="account" class="btn btn-primary" onclick="acButton()"> Apply for Account</button>
+    	<button id="deposit" class="btn btn-primary" onclick="depositButton()">Deposit Funds</button>
+    	<button id="withdraw" class="btn btn-primary" onclick="withdrawButton()">Withdraw Funds</button>
+    	<button id="transfer" class="btn btn-primary" onclick="mtButton()">Money Transfer</button>
+    	
+    	<form action="logout" method="GET">
+    		<button id="logout" type="submit" class="btn btn-primary">Log out</button>
+    	</form>
+    </div>
+    <div class = "form-popup" id="giveandtake">
+    	<form action="giveAndTake" class="form-container" method="POST">
+    		<input type="text" placeholder="Enter account ID" name="aID" required>
+    		<input type="text" placeholder="Enter money" name="moneyValue" required>
+    		<input type="hidden" id="bankAction" name="bankAction" value="">
+    		<button type="submit" class="btn">Submit</button>
+    		<button type="submit" class="btn cancel" onclick="closeGTForm()">Close</button>
+    	</form>
+    </div>
+    <div class = "form-popup" id= "moneyTransfer">
+    	<form action="moneyTransfer" class="form-container" method="POST">
+    		<input type="text" placeholder="Enter Source ID" name="sID" required>
+    		<input type="text" placeholder="Enter Desination ID" name="rID" required>
+    		<input type="text" placeholder="Enter money" name="moneyValue" required>
+    		<button type="submit" class="btn">Submit</button>
+    		<button type="submit" class="btn cancel" onclick="closeMTForm()">Close</button>
+    	</form>
+	</div>
+	<div class = "form-popup" id= "newAccount">
+    	<form action="newAccount" class="form-container" method="POST">
+    		<input type="text" placeholder="Enter money" name="moneyValue" required>
+    		<button type="submit" class="btn">Submit</button>
+    		<button type="submit" class="btn cancel" onclick="closeAcForm()">Close</button>
+    	</form>
+	</div>
+    <script src="bank.js"></script>
+</body>
+</html>

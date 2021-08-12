@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="bank.css" rel="stylesheet">
+<link href="login.css" rel="stylesheet">
+<title>Bank of Paul</title>
+</head>
+
+<body>
+<div class="container login-container">
+        <div class="row">
+            <div class="col-md-6 login-form-1">
+                <h3>User Login</h3>
+                <form action="login" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="Username" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Password" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Login" />
+                    </div>
+                    <div class="form-group">
+                        <a href="#" onclick="userSignup()" class="RegisterUser">Need an account?</a>
+                    </div>
+                    <input type = "hidden" name = "acctType" value = "1">
+                </form>
+            </div>
+            <div class="col-md-6 login-form-2">
+                <h3>Employee Login</h3>
+                <form action="login" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="Username" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Password" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Login" />
+                    </div>
+                    <div class="form-group">
+                        <a href="#" onclick="empSignup()" class="RegisterEmployee">Need an account?</a>
+                    </div>
+                    <input type = "hidden" name = "acctType" value = "2">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class = "form-popup" id= "userSignup">
+    	<form action="createNewUserAccount" class="form-container" method="POST">
+    		<input type="text" placeholder="Username" name="uname" required>
+    		<input type="text" placeholder="Password" name="passwd" required>
+    		<input type="text" placeholder="Repeat password" name="passwdc" required>
+    		<input type = "hidden" name = "acctType" value = "1">
+    		<button type="submit" class="btn">Submit</button>
+    		<button type="submit" class="btn cancel" onclick="closeUSForm()">Close</button>
+    	</form>
+	</div>
+	<div class = "form-popup" id= "empSignup">
+    	<form action="createNewUserAccount" class="form-container" method="POST">
+    		<input type="text" placeholder="Username" name="uname" required>
+    		<input type="text" placeholder="Password" name="passwd" required>
+    		<input type="text" placeholder="Repeat password" name="passwdc" required>
+    		<input type = "hidden" name = "acctType" value = "2">
+    		<button type="submit" class="btn">Submit</button>
+    		<button type="submit" class="btn cancel" onclick="closeESForm()">Close</button>
+    	</form>
+	</div>
+  	<script src="login.js"></script>
+</body>
+</html>
